@@ -91,6 +91,12 @@ In order to edit test scripts you can use any IDE of your liking. <br/> You can 
 
 <br/>
 
+# **Reporting**
+Mock test reports are generated and saved in [Shared Cucumber Report](https://reports.cucumber.io/reports/6e57e6b0-5995-4280-a64f-c2c728e6c715)
+
+
+<br/>
+
 # **TODO**
 * Create reusable steps - In Progress
 * Separate Environments Vars - **Done**
