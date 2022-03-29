@@ -2,6 +2,22 @@
 This API automation test framework uses [pactumJS](https://pactumjs.github.io/) as the testiong tool. Cucucmber-js is the chosen test framework and runner. <br/>
 If you ever decide to use any other runner/framework like mocha, jest etc., you can very well do that and the framework still work without any issues.
 
+```gherkin
+
+ Scenario: Casecaded get requests
+  Given endpoint "http://localhost/all"   # Set the endpoint.
+  When method "get"                       # Make request to the endpoint.
+  Then status 200                         # Verify response status is 200.
+  And def "{id}; {firstName}" = "body[0].id; [0].firstName"
+
+  Given endpoint "http://localhost//employee"
+  And request '{"id": {id}, "firstName": "{firstName}" }'
+  When method "get"  
+  Then status 200
+  And expect "lastName; firstName" == "Doe; John"
+```
+
+
 # **Installation**
 
 ## NodeJS
