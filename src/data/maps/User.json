@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Dr",
+    "firstName": "John",
+    "lastName": "Doe",
+    "designation": "Scientist",
+    "gender": "Male",
+    "locations": {
+      "usa": ["nyc", "sfo"],
+      "canada": ["to", "ota"]
+    }
+  },
+  {
+      "id": 2,
+      "title": "Ms",
+      "firstName": "Taylor",
+      "lastName": "Swift",
+      "designation": "Singer",
+      "gender": "Famale",
+      "locations": {
+        "usa": ["nyc", "sfo"],
+        "canada": ["to", "ota"]
+      }
+  },
+  {
+    "id": 3,
+    "title": "Dr",
+    "firstName": "Sues",
+    "lastName": "Sues",
+    "designation": "Actor",
+    "gender": "Male",
+    "locations": {
+      "usa": ["nyc", "sfo"],
+      "canada": ["to", "ota"]
+    }
+}
+]
