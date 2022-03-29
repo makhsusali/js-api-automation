@@ -4,6 +4,9 @@
 <dt><a href="#setEndpoint">setEndpoint(resource)</a></dt>
 <dd><p>To set the endpoint from baseUrl and the resource passed to the function. Endpoint = baseUrl + resource</p>
 </dd>
+<dt><a href="#setUrl">setUrl(url)</a></dt>
+<dd><p>To set the url endpoint.</p>
+</dd>
 <dt><a href="#setRequest">setRequest(request)</a></dt>
 <dd><p>To set the request parameters or request payload. This is an optional step.</p>
 </dd>
@@ -49,6 +52,25 @@ Given resource "/user/{id}"  // Reads value of variable {id} that was defined fr
 **Example**  
 ```js
 Given resource "/user/all"   // Sets endpoint = baseUrl + "/user/all". Example: https://mybaseUrl/user/all   
+```
+<a name="setUrl"></a>
+
+## setUrl(url)
+To set the url endpoint.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | Resource name of the API service to be called. |
+
+**Example**  
+```js
+Given endpoint "http://localhost/createUser" // Sets url endpoint to http://localhost/createUser
+```
+**Example**  
+```js
+Given endpoint "http://localhost/user/{id}"  // Reads value of variable {id} that was defined from the previous response and sets the url endpoint. Example: {id} = 1 then  url = http://localhost/user/1 
 ```
 <a name="setRequest"></a>
 

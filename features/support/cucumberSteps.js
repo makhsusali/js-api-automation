@@ -99,6 +99,17 @@ const evaluateValue = (value) => {
 
 
 /**
+ * @param {string} url Resource name of the API service to be called.
+ * @description To set the url endpoint.
+ * @example Given endpoint "http://localhost/createUser" // Sets url endpoint to http://localhost/createUser
+ * @example Given endpoint "http://localhost/user/{id}"  // Reads value of variable {id} that was defined from the previous response and sets the url endpoint. Example: {id} = 1 then  url = http://localhost/user/1 
+ */
+ const setUrl = (userUrl)=> {
+    finalUrl = replaceVar(userUrl);
+    url = finalUrl;
+};
+
+/**
  * @param {string} request JSON like string {"id": 1, "firstName": "John"}. Use single quotes ('') to pass value.
  * @description To set the request parameters or request payload. This is an optional step.
  * @example Given request '{"id": 1, "firstName": "John"}'  // Automatically sets get parameters. Example: https://mybaseUrl/resource?id=1&firstName=John
@@ -281,6 +292,10 @@ After( async () =>
 // _____________________STEPS________________________________
 Given('resource {string}', (userResource) => {
     setEndpoint(userResource);
+});
+
+Given('endpoint {string}', (userUrl) => {
+    setUrl(userUrl);
 });
 
 Given('request {string}', (userRequest) => {

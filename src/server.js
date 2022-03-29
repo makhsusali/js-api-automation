@@ -1,5 +1,4 @@
 const { mock, handler } = require('pactum');
-const { string } = require('yup');
 const userData = require('./data/maps/user.json')
 const { like } = require('pactum-matchers');
 

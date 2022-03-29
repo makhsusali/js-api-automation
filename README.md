@@ -10,7 +10,7 @@ If you ever decide to use any other runner/framework like mocha, jest etc., you 
   Then status 200                         # Verify response status is 200.
   And def "{id}; {firstName}" = "body[0].id; [0].firstName"
 
-  Given endpoint "http://localhost//employee"
+  Given endpoint "http://localhost/employee"
   And request '{"id": {id}, "firstName": "{firstName}" }'
   When method "get"  
   Then status 200
