@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": "cucumber-js --parallel 1 --format progress-bar --format json:./report/report.json --format html:./report/report.html"
+    "test": "cucumber-js --parallel 1 --format progress-bar --format json:./report/report.json --format html:./report/report.html && mocha --timeout 500000"
   },
   "keywords": [],
   "author": "",

@@ -100,7 +100,7 @@ Mock test reports are generated and saved in [Shared Cucumber Report](https://re
 Execution of automated tests definitely saves time but reporting the executed tests automatically is something that can help the stakeholder up to date. It also gives a lot of clarity and removes the manual effort of collecting test reports.
 Many Test Management apps in JIRA provide an API to import the execution reports. If you have selected Xray as the Test Management tool in JIRA, you can follow [few steps](https://docs.getxray.app/display/XRAYCLOUD/Testing+Node.js+apps+using+Cucumber.js+in+JavaScript) which can help map the JIRA tests with automated tests and upload the test report to JIRA.
 
-* Request a JIRA admin to create Global API key which will generate client_id and client_secret.
+* Request a JIRA admin to create Global API key which will generate client_id and client_secret. To do so an admin can go to **Manage Your apps App** &#8594; **Xray** &#8594; **API Key** &#8594; **Create API Key** &#8594; **Select User**.
 * Get the Issue number of the test from JIRA. Example: SW-186
 * Add a tag to cucumber scenario. Example: @TEST_SW-186
 ```gherkin
@@ -113,8 +113,9 @@ Many Test Management apps in JIRA provide an API to import the execution reports
 ```
 * Execute cucumber scenarios and generate a report file in JSON format. You can do that by adding a command parameter.
   ```sh
-    cucumber-js --format json:report.json
+  $  cucumber-js --format json:report.json
   ```
+* 
 * [Follow the steps from Xray site](https://docs.getxray.app/display/XRAYCLOUD/Authentication+-+REST) to get authenticated token. 
 * [Follow steps to upload the test results](https://docs.getxray.app/display/XRAYCLOUD/Import+Execution+Results+-+REST#ImportExecutionResultsREST-CucumberJSONresults).
 

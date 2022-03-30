@@ -3,3 +3,5 @@ node_modules
 report/*.html
 report/*.json
 1_SW*.feature
+cloud*.json
+report.json

@@ -1,27 +1,27 @@
-@apiTest
 Feature: Testing a Mock API
 
- Scenario: Casecaded get requests
-  Given resource "/all"
-  When method "get"
-  Then status 200
-  And def "{id}; {firstName}" = "body[0].id; [0].firstName"
+  @TEST_BIOP-18
+  Scenario: Casecaded get requests
+    Given resource "/all"
+    When method "get"
+    Then status 200
+    And def "{id}; {firstName}" = "body[0].id; [0].firstName"
   
-  Given resource "/employee"
-  And request '{"id": {id}, "firstName": "{firstName}" }'
-  When method "get"
-  Then status 200
-  And expect "lastName; firstName" == "Doe; John"
-  And expect "id; firstName" == "Number(1); {firstName}"
-  And expect "id; firstName" == "Number({id}); {firstName}"
-  And expect "id; firstName; locations.usa" == 'Number({id}); {firstName}; Array("nyc","sfo")'
-  And expect "id" == 1
-  And expect "id; firstName; locations.canada" of type "number; string; array"
-  # And expect "id" == "1"
-  # And expect "id" == 3
-  # And expect "id; firstName; locations.canada" of type "number; number; array"
+    Given resource "/employee"
+    And request '{"id": {id}, "firstName": "{firstName}" }'
+    When method "get"
+    Then status 200
+    And expect "lastName; firstName" == "Doe; John"
+    And expect "id; firstName" == "Number(1); {firstName}"
+    And expect "id; firstName" == "Number({id}); {firstName}"
+    And expect "id; firstName; locations.usa" == 'Number({id}); {firstName}; Array("nyc","sfo")'
+    And expect "id" == 1
+    And expect "id; firstName; locations.canada" of type "number; string; array"
+    # And expect "id" == "1"
+    # And expect "id" == 3
+    # And expect "id; firstName; locations.canada" of type "number; number; array"
 
-
+@TEST_BIOP-19
 Scenario: Test with Example Table
   Given resource "/employee"
   When request '<request>'
