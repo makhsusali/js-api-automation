@@ -65,7 +65,7 @@ If you decide to write the tests in Mocha, you can execute the tests with Mocha 
 * Change value of scripts.test node to "mocha":
 ```json
     {"scripts" :
-        "start": XXXXXXX
+        "start": "XXXXXXX"
         "test": "mocha"
     }
 ```
@@ -91,19 +91,42 @@ In order to edit test scripts you can use any IDE of your liking. <br/> You can 
 
 <br/>
 
-# **Reporting**
+# **Cucumber.io Reporting**
 Mock test reports are generated and saved in [Shared Cucumber Report](https://reports.cucumber.io/reports/6e57e6b0-5995-4280-a64f-c2c728e6c715)
 
+<br/>
+
+# **Mapping JIRA Test**
+Execution of automated tests definitely saves time but reporting the executed tests automatically is something that can help the stakeholder up to date. It also gives a lot of clarity and removes the manual effort of collecting test reports.
+Many Test Management apps in JIRA provide an API to import the execution reports. If you have selected Xray as the Test Management tool in JIRA, you can follow [few steps](https://docs.getxray.app/display/XRAYCLOUD/Testing+Node.js+apps+using+Cucumber.js+in+JavaScript) which can help map the JIRA tests with automated tests and upload the test report to JIRA.
+
+* Request a JIRA admin to create Global API key which will generate client_id and client_secret.
+* Get the Issue number of the test from JIRA. Example: SW-186
+* Add a tag to cucumber scenario. Example: @TEST_SW-186
+```gherkin
+	@TEST_SW-186
+	Scenario: Sample Test for Automated test integration
+		Given resource "/employee"
+		When request '{"id":1, "firstName": "John"}'
+		And method "get"
+		Then status 200
+```
+* Execute cucumber scenarios and generate a report file in JSON format. You can do that by adding a command parameter.
+  ```sh
+    cucumber-js --format json:report.json
+  ```
+* [Follow the steps from Xray site](https://docs.getxray.app/display/XRAYCLOUD/Authentication+-+REST) to get authenticated token. 
+* [Follow steps to upload the test results](https://docs.getxray.app/display/XRAYCLOUD/Import+Execution+Results+-+REST#ImportExecutionResultsREST-CucumberJSONresults).
 
 <br/>
 
 # **TODO**
-* Create reusable steps - In Progress
+* Create reusable steps - **Done**
 * Separate Environments Vars - **Done**
-* Create docs for installation and steps - In progress
-* Integrate with xray
-* Manage Authenticated Token
-* Loading Json Data
-* Validate Response Schema
-* Verify pattern in response body
-* Verify valid JSON response
+* Create docs for installation and steps - **Done**
+* Integrate with xray - **In Progress**
+* Manage Authenticated Token.
+* Loading Json Data - **Done**
+* Validate Response Schema.
+* Verify pattern in response body.
+* Verify valid JSON response.

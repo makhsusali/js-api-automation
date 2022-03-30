@@ -2,3 +2,4 @@ node_modules
 *.bat
 report/*.html
 report/*.json
+1_SW*.feature
