@@ -101,6 +101,7 @@ Execution of automated tests definitely saves time but reporting the executed te
 Many Test Management apps in JIRA provide an API to import the execution reports. If you have selected Xray as the Test Management tool in JIRA, you can follow [few steps](https://docs.getxray.app/display/XRAYCLOUD/Testing+Node.js+apps+using+Cucumber.js+in+JavaScript) which can help map the JIRA tests with automated tests and upload the test report to JIRA.
 
 * Request a JIRA admin to create Global API key which will generate client_id and client_secret. To do so an admin can go to **Manage Your apps App** &#8594; **Xray** &#8594; **API Key** &#8594; **Create API Key** &#8594; **Select User**.
+* Create a Test in JIRA and convert it to **Cucumber** from Manual.
 * Get the Issue number of the test from JIRA. Example: SW-186
 * Add a tag to cucumber scenario. Example: @TEST_SW-186
 ```gherkin
